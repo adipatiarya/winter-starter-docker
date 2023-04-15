@@ -1,0 +1,49 @@
+version: "3.8"
+services:
+  app:
+    build:
+      args:
+        user: adipati
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: wintercms
+    container_name: wintercms-app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    networks:
+      - wintercms
+
+  mysql:
+    image: mysql:5.7
+    restart: unless-stopped
+    container_name: wintercms-mysql
+    environment:
+      MYSQL_DATABASE: wintercms
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_PASSWORD: password
+      MYSQL_USER: winter
+      SERVICES_TAGS: dev
+      SERVICES_NAME: mysql
+    volumes:
+      - ./mysql:/docker-entrypoint-initdb.d
+    networks:
+      - wintercms
+
+  nginx:
+    image: nginx:latest
+    container_name: wintercms-nginx
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www
+      - ./nginx:/etc/nginx/conf.d
+    networks:
+      - wintercms
+
+networks:
+  wintercms:
+    driver: bridge
