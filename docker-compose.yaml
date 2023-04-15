@@ -28,7 +28,8 @@ services:
       SERVICES_TAGS: dev
       SERVICES_NAME: mysql
     volumes:
-      - ./mysql:/docker-entrypoint-initdb.d
+        - ./mysql/data:/var/lib/mysql:rw
+        - ./mysql/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql:ro
     networks:
       - wintercms
 
