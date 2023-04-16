@@ -9,11 +9,9 @@ make init
 ```
 
 ```
-Pastikan docker dan docker-compose telah terinstall di local
-```
+Pastikan docker dan docker-compose telah terinstall
 
-```
-url http://localhost:8000
+
 
 default user admin = admin
 default passwd admin = 12345
