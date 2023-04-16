@@ -1,0 +1,26 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: 'Id'
+    name:
+        label: 'Nama'
+    slug:
+        label: 'Slug'
+    price:
+        label: 'Harga'
+    description:
+        label: 'Deskripsi'
+    created_at:
+        label: 'winter.market::lang.models.general.created_at'
+        type: datetime
+        searchable: true
+        sortable: true
+        invisible: true
+    updated_at:
+        label: 'winter.market::lang.models.general.updated_at'
+        type: datetime
+        searchable: true
+        sortable: true

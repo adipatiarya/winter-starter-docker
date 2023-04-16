@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: 'winter.market::lang.models.product.label'
+
+# Model Form Field configuration
+form: $/winter/market/models/product/fields.yaml
+
+# Model Class name
+modelClass: Winter\Market\Models\Product
+
+# Default redirect location
+defaultRedirect: winter/market/products
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: winter/market/products/update/:id
+    redirectClose: winter/market/products
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: winter/market/products
+    redirectClose: winter/market/products
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

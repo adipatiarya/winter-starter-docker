@@ -1,0 +1,12 @@
+{
+    "name": "winter/wn-market-plugin",
+    "description": "Mencoba winter",
+    "type": "winter-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AA"
+        }
+    ],
+    "require": {}
+}

@@ -32,7 +32,7 @@ return [
 
     'connections' => [
         'sqlite' => [
-            'database' => env('DB_DATABASE', '/home/adipati/Developments/PHP/winter-1.2.1/storage/database.sqlite'),
+            'database' => env('DB_DATABASE', 'wintercms'),
             'driver' => 'sqlite',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
             'prefix' => '',
@@ -48,22 +48,22 @@ return [
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
-            'password' => env('DB_PASSWORD', 'password'),
+            'password' => env('DB_PASSWORD', ''),
             'port' => env('DB_PORT', '3306'),
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,
             'unix_socket' => env('DB_SOCKET', ''),
             'url' => env('DATABASE_URL'),
-            'username' => env('DB_USERNAME', 'winter'),
+            'username' => env('DB_USERNAME', ''),
         ],
         'pgsql' => [
             'charset' => 'utf8',
-            'database' => env('DB_DATABASE', 'winter'),
+            'database' => env('DB_DATABASE', 'wintercms'),
             'driver' => 'pgsql',
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', 'mysql'),
             'password' => env('DB_PASSWORD', ''),
-            'port' => env('DB_PORT', '5432'),
+            'port' => env('DB_PORT', '3306'),
             'prefix' => '',
             'prefix_indexes' => true,
             'search_path' => 'public',

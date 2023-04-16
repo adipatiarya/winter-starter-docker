@@ -1,0 +1,25 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: 'Nama produk'
+        span: left
+        placeholder: Enter a title
+    slug:
+        label: Slug
+        span: right
+        placeholder: Enter a slug
+        preset:
+            type: slug
+            field: name
+
+    price:
+        label: 'Harga'
+    description:
+        label: 'Deskripsi'
+        type: textarea
+
+
+    
