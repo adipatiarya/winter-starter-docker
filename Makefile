@@ -2,6 +2,7 @@ init:
 	make down && \
 	make up && \
 	cp env.default .env && sleep 15 && \
+	make composer && \
 	make migrate && \
 	make admin
 up:
@@ -19,3 +20,5 @@ dev-plugin:
 	docker exec -i wintercms-app php artisan plugin:refresh Winter.Market
 env:
 	docker exec -i wintercms-app php artisan winter:env && php artisan key:generate
+composer:
+	docker exec wintercms-app composer install
